@@ -14,20 +14,17 @@ function App() {
           </h1>
           <TaskCard
             title='Assignment 1'
-            completedAtDate={new Date('2023-03-18')}
-            dueDate={new Date('2023-02-18')}
+            completedAtDate='2023-02-18'
             assigneeName='Rohit sir'
           />
           <TaskCard
             title='Assignment 2'
-            completedAtDate={new Date('2023-03-18')}
-            dueDate={new Date('2023-02-18')}
+            completedAtDate='2023-02-18'
             assigneeName='Ajay J'
           />
           <TaskCard
             title='Assignment 2'
-            completedAtDate={new Date('2023-03-18')}
-            dueDate={new Date('2023-02-18')}
+            completedAtDate='2023-02-18'
             assigneeName='Ajay J'
           />
           <button className='p-2 m-2'>+ New Task</button>
@@ -36,14 +33,12 @@ function App() {
           <h1 className='text-center font-bold text-xl mb-4'>Done</h1>
           <TaskCard
             title='Assignment 1'
-            completedAtDate={new Date('2023-03-18')}
-            dueDate={new Date('2023-04-18')}
+            dueDate='2023-01-02'
             assigneeName='Rohit M'
           />
           <TaskCard
             title='Assignment 2'
-            completedAtDate={new Date('2023-03-18')}
-            dueDate={new Date('2023-04-18')}
+            dueDate='2023-01-02'
             assigneeName='Ajay J'
           />
         </div>
