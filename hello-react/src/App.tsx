@@ -1,8 +1,8 @@
+import React from 'react';
 import TaskCard from './TaskCard';
 
 function App() {
 
-  const currentdate = new Date();
   return (
     <div className='px-10 mx-10 mt-5'> 
       <h1 className='mx-4 mb-2 text-3xl font-bold'>Smarter Tasks</h1>

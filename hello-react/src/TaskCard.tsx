@@ -1,7 +1,14 @@
 import React from "react";
 import './TaskCard.css'
 
-const TaskCard = (props) => {
+interface taskCardPropType {
+  title: string; 
+  dueDate: Date; 
+  completedAtDate: Date; 
+  assigneeName: string;
+}
+
+const TaskCard = (props: taskCardPropType) => {
   const duedate = props.dueDate.toISOString().split('T')[0];
   const completeddate = props.completedAtDate.toISOString().split('T')[0];
   
