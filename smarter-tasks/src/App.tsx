@@ -2,10 +2,12 @@
 import React from "react"
 import TaskApp from './TaskApp'
 
-export default function App() {
+function App() {
   return (
     <div className="App">
     <TaskApp />
   </div>
   )
 }
+
+export default App;
