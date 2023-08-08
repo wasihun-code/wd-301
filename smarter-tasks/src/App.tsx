@@ -1,13 +1,11 @@
 // import './App.css'
 import React from "react"
 import TaskApp from './TaskApp'
-function App() {
 
+export default App = () => {
   return (
     <div className="App">
     <TaskApp />
   </div>
   )
 }
-
-export default App
