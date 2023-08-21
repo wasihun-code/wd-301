@@ -9,8 +9,7 @@ class Task extends React.Component<TaskProp> {
         <p className="text-sm text-slate-500">Due Date: {this.props.dueDate}</p>
         <p className="text-sm text-slate-500">
           Description: {this.props.description}
-        </p>{' '}
-        some description
+        </p>
       </div>
     );
   }
