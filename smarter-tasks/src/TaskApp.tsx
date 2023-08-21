@@ -1,14 +1,11 @@
-import React from "react";
-import TaskForm from "./TaskForm";
-import TaskList from "./TaskList";
-import { TaskItem } from "./types";
+import React from 'react';
+import TaskForm from './TaskForm';
+import TaskList from './TaskList';
+import { ManyTasksProps as TaskAppState, TaskProp } from './types';
 
 interface TaskAppProp {}
-interface TaskAppState {
-  tasks: TaskItem[];
-}
+
 class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
-  
   constructor(props: TaskAppProp) {
     super(props);
     this.state = {
@@ -16,7 +13,7 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
     };
   }
 
-  addTask = (task: TaskItem) => {
+  addTask = (task: TaskProp) => {
     this.setState((state) => {
       return {
         tasks: [...state.tasks, task],
@@ -43,10 +40,9 @@ class TaskApp extends React.Component<TaskAppProp, TaskAppState> {
             <TaskList tasks={this.state.tasks} />
           </div>
         </div>
-      </div>    
-      );
+      </div>
+    );
   }
 }
-
 
 export default TaskApp;
