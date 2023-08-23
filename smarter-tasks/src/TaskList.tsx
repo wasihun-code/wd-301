@@ -11,7 +11,7 @@ const TaskList = (
       title={task.title}
       dueDate={task.dueDate}
       description={task.description}
-      onDelete={() => props.onDelete(index)} // Pass the delete function
+      onDelete={() => props.onDelete(index)}
     />
   ));
 

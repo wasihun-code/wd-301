@@ -13,11 +13,8 @@ const TaskApp = () => {
   );
 
   const handleDeleteTask = (index: number) => {
-    // Create a copy of the tasks array with the specified task removed
     const updatedTasks: TaskProp[] = [...taskAppState.tasks];
-    updatedTasks.splice(index, 1); // Remove the task at the specified index
-
-    // Update the state with the new tasks (this will also update localStorage)
+    updatedTasks.splice(index, 1);
     setTaskAppState({ tasks: updatedTasks });
   };
 
