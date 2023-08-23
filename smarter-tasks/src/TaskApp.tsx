@@ -12,6 +12,15 @@ const TaskApp = () => {
     },
   );
 
+  const handleDeleteTask = (index: number) => {
+    // Create a copy of the tasks array with the specified task removed
+    const updatedTasks: TaskProp[] = [...taskAppState.tasks];
+    updatedTasks.splice(index, 1); // Remove the task at the specified index
+
+    // Update the state with the new tasks (this will also update localStorage)
+    setTaskAppState({ tasks: updatedTasks });
+  };
+
   const addTask = (task: TaskProp) => {
     setTaskAppState({ tasks: [...taskAppState.tasks, task] });
   };
@@ -29,7 +38,7 @@ const TaskApp = () => {
             Pending
           </h1>
           <TaskForm addTask={addTask} />
-          <TaskList tasks={taskAppState.tasks} />
+          <TaskList tasks={taskAppState.tasks} onDelete={handleDeleteTask} />
         </div>
       </div>
     </div>
