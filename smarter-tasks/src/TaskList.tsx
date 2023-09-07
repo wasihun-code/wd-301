@@ -7,6 +7,7 @@ const TaskList = (
 ) => {
   const list = props.tasks.map((task, index) => (
     <Task
+      id={task.id}
       key={index}
       title={task.title}
       dueDate={task.dueDate}

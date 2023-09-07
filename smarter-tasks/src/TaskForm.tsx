@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuidv4 } from 'uuid';
 import { TaskProp as TaskFormState, TaskProp } from './types';
 
 interface TaskFormProps {
@@ -7,6 +8,7 @@ interface TaskFormProps {
 
 const TaskForm = (props: TaskFormProps) => {
   const [formState, setFormState] = React.useState<TaskFormState>({
+    id: '',
     title: '',
     description: '',
     dueDate: '',
@@ -37,9 +39,14 @@ const TaskForm = (props: TaskFormProps) => {
     if (formState.title.length === 0 || formState.dueDate.length === 0) {
       return;
     }
-
-    props.addTask(formState);
-    setFormState({ title: '', description: '', dueDate: '' });
+    const newTask: TaskProp = {
+      id: uuidv4(), // Generate a unique ID
+      title: formState.title,
+      description: formState.description,
+      dueDate: formState.dueDate,
+    };
+    props.addTask(newTask);
+    setFormState({ title: '', description: '', dueDate: '', id: '' });
   };
 
   return (
