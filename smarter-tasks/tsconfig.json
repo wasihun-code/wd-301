@@ -1,6 +1,7 @@
 {
   "compilerOptions": {
     "jsx": "react",
+    "module": "esnext",
     "esModuleInterop": true,
     "target": "esnext", // Change to esnext
     "lib": ["dom", "dom.iterable", "esnext"],
