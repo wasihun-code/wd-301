@@ -20,7 +20,7 @@ const Dashboard: React.FC = () => {
   const signoutHandler = (event) => {
     console.log(event);
     localStorage.removeItem('userData');
-    navigator('/');
+    navigator('/signin');
   };
 
   return (
