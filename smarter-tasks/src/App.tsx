@@ -4,7 +4,7 @@ import { ThemeContext } from './context/theme';
 import { ProjectsProvider } from './context/projects/context';
 import { MembersProvider } from './context/members/context';
 import React from 'react';
-import router from './router';
+import router from './routers';
 const App = () => {
   const { theme } = useContext(ThemeContext);
   return (
