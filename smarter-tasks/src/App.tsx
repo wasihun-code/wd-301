@@ -1,48 +1,24 @@
+import { useContext } from 'react';
+import { RouterProvider } from 'react-router-dom';
+import { ThemeContext } from './context/theme';
+import { ProjectsProvider } from './context/projects/context';
+import { MembersProvider } from './context/members/context';
 import React from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import Signup from './pages/signup';
-import Signin from './pages/signin';
-import Dashboard from './pages/dashboard';
-import ProtectedRoute from './ProtectedRoute';
-import Notfound from './pages/Notfound';
-
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Signup />,
-  },
-  {
-    path: '/signup',
-    element: <Signup />,
-  },
-  {
-    path: '/signin',
-    element: <Signin />,
-  },
-  {
-    path: '/notfound',
-    element: <Notfound />,
-  },
-  {
-    path: '/dashboard',
-    element: (
-      <ProtectedRoute>
-        <Dashboard />
-      </ProtectedRoute>
-    ),
-  },
-  {
-    path: '*',
-    element: <Notfound />,
-  },
-]);
-
+import router from './router';
 const App = () => {
+  const { theme } = useContext(ThemeContext);
   return (
-    <>
-      <RouterProvider router={router} />
-    </>
+    <div
+      className={`h-screen w-full mx-auto py-2 ${
+        theme === 'dark' ? 'dark' : ''
+      }`}
+    >
+      <ProjectsProvider>
+        <MembersProvider>
+          <RouterProvider router={router} />
+        </MembersProvider>
+      </ProjectsProvider>
+    </div>
   );
 };
-
 export default App;
