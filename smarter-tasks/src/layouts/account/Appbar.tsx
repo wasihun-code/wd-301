@@ -1,5 +1,4 @@
 /* eslint-disable no-empty-pattern */
-/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from 'react';
 import { useState, useContext, Fragment } from 'react';
 import { Disclosure, Menu, Transition, Switch } from '@headlessui/react';

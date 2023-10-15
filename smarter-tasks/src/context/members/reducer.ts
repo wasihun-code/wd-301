@@ -52,6 +52,7 @@ export const reducer = (
     case 'ADD_MEMBER_SUCCESS':
       return { ...state, members: [...state.members, action.payload] };
     case 'REMOVE_MEMBER_SUCCESS':
+      // eslint-disable-next-line no-case-declarations
       const updatedMembers = state.members.filter(
         (member) => member.id !== action.payload,
       );

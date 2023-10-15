@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
 
 // First, I'll import the useProjectsState custom hook to access projects state.
@@ -29,7 +28,7 @@ export default function ProjectListItems() {
   // individual projects card.
   return (
     <>
-      {projects.map((project: any) => (
+      {projects.map((project: { id; name }) => (
         <div
           key={project.id}
           className="block p-6 bg-white border border-gray-200 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700"
